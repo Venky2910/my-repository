@@ -90,4 +90,89 @@ void set_all(char * ptr, char value, unsigned int size);
  */
 void clear_all(char * ptr, unsigned int size);
 
+/**
+ * @brief moves data from source array to destination array
+ *
+ * Given a pointer to a char data set, this will move the data to the destination array and return the pointer to it. 
+ *
+ * @param src Pointer to data array
+ * @param length Number of elements in the array
+ * @param dst Pointer to destination array
+ *
+ * @return pointer to destination array.
+ */
+uint8_t* my_memmove(uint8_t* src, uint8_t* dst, size_t length);
+
+/**
+ * @brief copies data from source array to destination array
+ *
+ * Given a pointer to a char data set, this will copy the data to the destination array and return the pointer to it. 
+ *
+ * @param src Pointer to data array
+ * @param length Number of elements in the array
+ * @param dst Pointer to destination array
+ *
+ * @return pointer to destination array.
+ */
+uint8_t* my_memcopy(uint8_t* src, uint8_t* dst, size_t length);
+
+/**
+ * @brief sets data to a certain value
+ *
+ * Given a pointer to a char data set, this will set the array to a certain value and return the pointer to it. 
+ *
+ * @param src Pointer to data array
+ * @param length Number of elements in the array
+ * @param value the value data to be set to
+ *
+ * @return pointer to destination array.
+ */
+uint8_t* my_memset(uint8_t* src, size_t length, uint8_t value);
+
+/**
+ * @brief sets the data to zero
+ *
+ * Given a pointer to a char data set, this will set the array to zero and return the pointer to it. 
+ *
+ * @param src Pointer to data array
+ * @param length Number of elements in the array
+ *
+ * @return pointer to destination array.
+ */
+uint8_t* my_memzero(uint8_t* src, size_t length);
+
+/**
+ * @brief reverses the data
+ *
+ * Given a pointer to a char data set, this will reverse the data of the array and return the pointer to it. 
+ *
+ * @param src Pointer to data array
+ * @param length Number of elements in the array
+ *
+ * @return pointer to destination array.
+ */
+uint8_t* my_reverse(uint8_t* src, size_t length);
+
+/**
+ * @brief reserves the memory dynamically 
+ *
+ * This function allocates memory during runtime time and returns the pointer to the memory reserved. 
+ *
+ * @param length Number of elements in the array
+ *
+ * @return pointer to allocated memory
+ */
+int32_t* reserve_words(size_t length);
+
+/**
+ * @brief frees allocated mmory
+ *
+ * This function frees the allocated memory. 
+ *
+ * @param src Pointer to data array
+ *
+ * @return void
+ */
+void free_words(int32_t* src);
+
 #endif /* __MEMORY_H__ */

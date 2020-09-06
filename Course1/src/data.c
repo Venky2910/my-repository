@@ -2,7 +2,7 @@
 #include "memory.h"
 #include "memory.c"
 
-uint8_t my_itoa(int32_t data,uint8_t* ptr,uint32_t base){
+uint8_t* my_itoa(int32_t data,uint8_t* ptr,uint32_t base){
 	uint8_t i,rem=0;
 	if(base<10){
 		for(i=0;data<base;i++){
@@ -26,7 +26,7 @@ uint8_t my_itoa(int32_t data,uint8_t* ptr,uint32_t base){
 	return ptr;
 }
 
-int32_t my_atoi(uint8_t* ptr, uint8_t digits, uint8_t base){
+int32_t* my_atoi(uint8_t* ptr, uint8_t digits, uint8_t base){
 	uint8_t i, power,num;
 	int32_t value=0;
 	for(i=digits-1;i>=0;i--){
@@ -40,7 +40,7 @@ int32_t my_atoi(uint8_t* ptr, uint8_t digits, uint8_t base){
 	return value
 }			
 
-int32_t my_power(base, raise){
+int32_t my_power(uint8_t base,uint8_t raise){
 	uint8_t i;
 	int32_t power=0;
 	for(i=0;i<raise;i++){

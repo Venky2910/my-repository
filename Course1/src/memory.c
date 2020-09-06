@@ -81,7 +81,7 @@ uint8_t* my_memzero(uint8_t* src, size_t length){
   return ptr;
 }
 
-uint8_t my_reverse(uint8_t* src, size_t length){
+uint8_t* my_reverse(uint8_t* src, size_t length){
   uint8_t i,temp;
   if(length%2){
     for(i=0; i<(length-1)/2;i++){
