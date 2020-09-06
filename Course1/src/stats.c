@@ -26,28 +26,6 @@
 #include "platform.h"
 
 /* Size of the Data Set */
-void main()
-{
-  unsigned char test[] = { 34, 201, 190, 154,   8, 194,   2,   6,
-                              114, 88,   45,  76, 123,  87,  25,  23,
-                              200, 122, 150, 90,   92,  87, 177, 244,
-                              201,   6,  12,  60,   8,   2,   5,  67,
-                                7,  87, 250, 230,  99,   3, 100,  90};
-
-  unsigned char maximum,minimum;
-  unsigned char mean,median;
-  int i;
-  /*for (i=0;i<40;i++)*/
-  /* Other Variable Declarations Go Here */
-  /* Statistics and Printing Functions Go Here */
-  print_array(test);
-  mean = find_mean(test);
-  sort_array(test,40);
-  median =find_median(test,40);
-  maximum= find_maximum(test);
-  minimum= find_minimum(test);
-  print_statistics(mean,median,maximum,minimum);
-}
 void sort_array(unsigned char array[],int n)
 {
 	int i=0;
@@ -92,11 +70,11 @@ unsigned char find_minimum(unsigned char sorted_array[])
 	min = sorted_array[39];
 	return min;
 }
-void print_array(unsigned char array[])
+void print_array(unsigned char* array,unsigned char size)
 {
 	int i;
 	printf("The given Array is: \n");
-	for(i=0;i<40;i++)
+	for(i=0;i<size;i++)
 	{
 		printf("%d ",array[i]);
 	}

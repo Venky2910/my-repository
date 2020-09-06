@@ -1,51 +1,49 @@
+/******************************************************************************
+
+******************************************************************************/
+
 /**
  * @file data.h
- * @brief Conversions of data in other bases
+ * @brief Abstraction of integer to ascii and ascii to integer conversion
  *
- * This file is used to convert the data in the array to different forms in different bases using function calls
+ * This header file provides an abstraction of reading and
+ * writing to data via function calls.
  *
- *
- * @author Venkatesh R shenoy
- * @date September 6 2020
+ * @author Simran Saxena 
+ * @date 05/09/2020
  *
  */
-#ifndef __DATA_H__
-#define __DATA_H__
 
 /**
- * @brief Converts data into ASCII string
+ * @brief Converts integer to ascii String
  *
- * Given a pointer to a data set, this will convert the data to its equivalent ASCII string in base provided
+ * Given a pointer to a char data set, and 32 bit integer, 
+ * depending on the base provided, it converts the integer to 
+ * ascii String representation. 
  *
- * @param data data to be converted
- * @param ptr Pointer provided to give output
- * @param base base to be converted to
+ * @param ptr Pointer to data array
+ * @param data Integer
+ * @param base Base provided from 2 to 16	
  *
- * @return ASCII string as pointer ptr
+ * @return length of the String including null character and if present
+ * -ve sign
  */
-uint8_t my_itoa(int32_t data, uint8_t* ptr, uint8_t base);
+
+uint8_t my_itoa(int32_t data, uint8_t * ptr, uint32_t base);
 
 /**
- * @brief Converts ASCII string into data
+ * @brief Converts ascii String to integer
  *
- * Given a pointer to an ASCII string, this will convert it to its equivalent data value from the base provided.
+ * Given a pointer to a char data set, and the length of the string
+ * dependin on the base it converts from ascii string to integer
  *
- * @param src pointer to the string
- * @param digits number of digits in the ASCII string
- * @param base base to be converted to
+ * @param ptr Pointer to data array
+ * @param digits Length of the String
+ * @param base Base provided from 2 to 16
  *
- * @return value of the string
+ * @return value of the integer
+ * 
  */
-int32_t my_atoi(uint8_t* src, uint8_t digits, uint8_t base);
 
-/**
- * @brief base raised to power
- *
- * This function raises the number to a given power.
- *
- * @param base the index to be raised
- * @param raise the power to be raised
- *
- * @return raised value of the base
- */
-int32_t my_power(uint8_t base, uint8_t raise);
+int32_t my_atoi(uint8_t * ptr, uint8_t digits, uint32_t base);
+
